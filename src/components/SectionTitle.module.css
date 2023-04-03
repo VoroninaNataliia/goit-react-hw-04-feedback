@@ -1,0 +1,15 @@
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 450px;
+    padding: 10px;
+    
+}
+
+.statTitle {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 25px;
+}

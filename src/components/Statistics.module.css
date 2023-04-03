@@ -1,0 +1,15 @@
+.statsBox {
+  display: flex;
+    padding: 5px 15px;
+   width: 100%;
+   background-color: lightyellow;
+   border: solid gray 2px; 
+   border-radius: 3px;
+}
+
+.statsText {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding: 3px;
+}

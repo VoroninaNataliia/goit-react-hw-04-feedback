@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%; */
+    margin: 0 auto;
+    padding: 30px 100px;
+    background-color: lightgreen;
+    border: solid darkgray 5px;
+    border-radius: 5px;
+}
+
+.title {
+    display: flex;
+    font-size: 30px;
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.btn {
+    margin: 5px;
+    padding: 5 0;
+    width: 100px;
+    border: solid darkgray 3px;
+    border-radius: 3px;
+}
