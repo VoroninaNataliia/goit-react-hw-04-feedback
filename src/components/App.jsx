@@ -1,36 +1,28 @@
-import { Component } from 'react';
+import { useState} from 'react';
 import { FeedbackOptions } from './FeedbackOptions';
 import { Statistics } from './Statistics';
 import { Section } from './SectionTitle';
 import { Notification } from './Notification'
 
 
-
-class App extends Component {
-   state = {
-    good: 0,
-    neutral: 0,
-     bad: 0,
+const App = () => {
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
+        
     
-  }
-  handleFeedbackClick = (e) => {
+  const handleFeedbackClick = (e) => {
     const { name } = e.currentTarget;
     switch (name) {
       case "good":
-        this.setState((prevState) => ({
-          good: prevState.good + 1,
-        }));
+        setGood(good + 1);
         break;
 
       case "neutral":
-        this.setState((prevState) => ({
-          neutral: prevState.neutral + 1,
-        }));
+        setNeutral(neutral + 1);
             break;
         case "bad":
-            this.setState((prevState) => ({
-              bad: prevState.bad + 1,
-            }));
+            setBad(bad + 1);
             break;
       default:
         throw new Error("no such case");
@@ -38,20 +30,19 @@ class App extends Component {
   };
 
  
-  countTotalFeedback = () => {
-    const { good, neutral, bad } = this.state
+  const countTotalFeedback = () => {
    return good + neutral + bad;
      
   }
   
-  render() {
-    const { good, neutral, bad } = this.state;
-    const total = this.countTotalFeedback();
-    const percentage = (good / total * 100).toFixed(0);
+  const total = countTotalFeedback();
+  const percentage = (good / total * 100).toFixed(0);
+  
+
     return (
       <>
         <Section>
-          <FeedbackOptions onHandleUpdate={this.handleFeedbackClick} />
+          <FeedbackOptions onHandleUpdate={handleFeedbackClick} />
         </Section>
         <Section title="Statistics">
           {total ? (
@@ -70,6 +61,4 @@ class App extends Component {
     );
   }
   
-};
-
 export default App;
